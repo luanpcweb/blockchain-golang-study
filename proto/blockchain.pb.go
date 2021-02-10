@@ -118,58 +118,20 @@ func (x *AddBlockResponse) GetHash() string {
 	return ""
 }
 
-type GetBlockchainRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-}
-
-func (x *GetBlockchainRequest) Reset() {
-	*x = GetBlockchainRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_blockchain_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetBlockchainRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetBlockchainRequest) ProtoMessage() {}
-
-func (x *GetBlockchainRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_blockchain_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetBlockchainRequest.ProtoReflect.Descriptor instead.
-func (*GetBlockchainRequest) Descriptor() ([]byte, []int) {
-	return file_proto_blockchain_proto_rawDescGZIP(), []int{2}
-}
-
 type Block struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Hash          string `protobuf:"bytes,1,opt,name=hash,proto3" json:"hash,omitempty"`
-	PrevBlockHash string `protobuf:"bytes,2,opt,name=prevBlockHash,proto3" json:"prevBlockHash,omitempty"`
-	Data          string `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	PrevBlockHash string `protobuf:"bytes,1,opt,name=prevBlockHash,proto3" json:"prevBlockHash,omitempty"`
+	Data          string `protobuf:"bytes,2,opt,name=data,proto3" json:"data,omitempty"`
+	Hash          string `protobuf:"bytes,3,opt,name=hash,proto3" json:"hash,omitempty"`
 }
 
 func (x *Block) Reset() {
 	*x = Block{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_blockchain_proto_msgTypes[3]
+		mi := &file_proto_blockchain_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -182,7 +144,7 @@ func (x *Block) String() string {
 func (*Block) ProtoMessage() {}
 
 func (x *Block) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_blockchain_proto_msgTypes[3]
+	mi := &file_proto_blockchain_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -195,14 +157,7 @@ func (x *Block) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Block.ProtoReflect.Descriptor instead.
 func (*Block) Descriptor() ([]byte, []int) {
-	return file_proto_blockchain_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *Block) GetHash() string {
-	if x != nil {
-		return x.Hash
-	}
-	return ""
+	return file_proto_blockchain_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *Block) GetPrevBlockHash() string {
@@ -217,6 +172,51 @@ func (x *Block) GetData() string {
 		return x.Data
 	}
 	return ""
+}
+
+func (x *Block) GetHash() string {
+	if x != nil {
+		return x.Hash
+	}
+	return ""
+}
+
+type GetBlockchainRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *GetBlockchainRequest) Reset() {
+	*x = GetBlockchainRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_blockchain_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetBlockchainRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetBlockchainRequest) ProtoMessage() {}
+
+func (x *GetBlockchainRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_blockchain_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetBlockchainRequest.ProtoReflect.Descriptor instead.
+func (*GetBlockchainRequest) Descriptor() ([]byte, []int) {
+	return file_proto_blockchain_proto_rawDescGZIP(), []int{3}
 }
 
 type GetBlockchainResponse struct {
@@ -275,14 +275,14 @@ var file_proto_blockchain_proto_rawDesc = []byte{
 	0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x64, 0x61, 0x74, 0x61, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
 	0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x22, 0x26, 0x0a, 0x10, 0x41, 0x64, 0x64, 0x42, 0x6c, 0x6f,
 	0x63, 0x6b, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x68, 0x61,
-	0x73, 0x68, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x68, 0x61, 0x73, 0x68, 0x22, 0x16,
-	0x0a, 0x14, 0x47, 0x65, 0x74, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x55, 0x0a, 0x05, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x12,
-	0x12, 0x0a, 0x04, 0x68, 0x61, 0x73, 0x68, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x68,
-	0x61, 0x73, 0x68, 0x12, 0x24, 0x0a, 0x0d, 0x70, 0x72, 0x65, 0x76, 0x42, 0x6c, 0x6f, 0x63, 0x6b,
-	0x48, 0x61, 0x73, 0x68, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x70, 0x72, 0x65, 0x76,
-	0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x48, 0x61, 0x73, 0x68, 0x12, 0x12, 0x0a, 0x04, 0x64, 0x61, 0x74,
-	0x61, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x22, 0x3d, 0x0a,
+	0x73, 0x68, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x68, 0x61, 0x73, 0x68, 0x22, 0x55,
+	0x0a, 0x05, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x12, 0x24, 0x0a, 0x0d, 0x70, 0x72, 0x65, 0x76, 0x42,
+	0x6c, 0x6f, 0x63, 0x6b, 0x48, 0x61, 0x73, 0x68, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d,
+	0x70, 0x72, 0x65, 0x76, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x48, 0x61, 0x73, 0x68, 0x12, 0x12, 0x0a,
+	0x04, 0x64, 0x61, 0x74, 0x61, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x64, 0x61, 0x74,
+	0x61, 0x12, 0x12, 0x0a, 0x04, 0x68, 0x61, 0x73, 0x68, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x04, 0x68, 0x61, 0x73, 0x68, 0x22, 0x16, 0x0a, 0x14, 0x47, 0x65, 0x74, 0x42, 0x6c, 0x6f, 0x63,
+	0x6b, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x3d, 0x0a,
 	0x15, 0x47, 0x65, 0x74, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x52, 0x65,
 	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x24, 0x0a, 0x06, 0x62, 0x6c, 0x6f, 0x63, 0x6b, 0x73,
 	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x42,
@@ -315,14 +315,14 @@ var file_proto_blockchain_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_proto_blockchain_proto_goTypes = []interface{}{
 	(*AddBlockRequest)(nil),       // 0: proto.AddBlockRequest
 	(*AddBlockResponse)(nil),      // 1: proto.AddBlockResponse
-	(*GetBlockchainRequest)(nil),  // 2: proto.GetBlockchainRequest
-	(*Block)(nil),                 // 3: proto.Block
+	(*Block)(nil),                 // 2: proto.Block
+	(*GetBlockchainRequest)(nil),  // 3: proto.GetBlockchainRequest
 	(*GetBlockchainResponse)(nil), // 4: proto.GetBlockchainResponse
 }
 var file_proto_blockchain_proto_depIdxs = []int32{
-	3, // 0: proto.GetBlockchainResponse.blocks:type_name -> proto.Block
+	2, // 0: proto.GetBlockchainResponse.blocks:type_name -> proto.Block
 	0, // 1: proto.Blockchain.AddBlock:input_type -> proto.AddBlockRequest
-	2, // 2: proto.Blockchain.GetBlockchain:input_type -> proto.GetBlockchainRequest
+	3, // 2: proto.Blockchain.GetBlockchain:input_type -> proto.GetBlockchainRequest
 	1, // 3: proto.Blockchain.AddBlock:output_type -> proto.AddBlockResponse
 	4, // 4: proto.Blockchain.GetBlockchain:output_type -> proto.GetBlockchainResponse
 	3, // [3:5] is the sub-list for method output_type
@@ -363,7 +363,7 @@ func file_proto_blockchain_proto_init() {
 			}
 		}
 		file_proto_blockchain_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetBlockchainRequest); i {
+			switch v := v.(*Block); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -375,7 +375,7 @@ func file_proto_blockchain_proto_init() {
 			}
 		}
 		file_proto_blockchain_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Block); i {
+			switch v := v.(*GetBlockchainRequest); i {
 			case 0:
 				return &v.state
 			case 1:
