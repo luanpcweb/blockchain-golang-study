@@ -5,7 +5,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/plutov/packagemain/00-grpc/proto"
+	"github.com/luanpcweb/blockchain-golang-study/proto"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 )
